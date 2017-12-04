@@ -5,7 +5,7 @@ URLPLEXPASS="https://plex.tv/api/downloads/1.json?channel=plexpass"
 DOWNLOADPATH="/tmp"
 LOGPATH="/tmp"
 LOGFILE="PMS_Updater.log"
-PMSPARENTPATH="/usr/pbi/plexmediaserver-amd64/share"
+PMSPARENTPATH="/usr/local/share"
 PMSLIVEFOLDER="plexmediaserver"
 PMSBAKFOLDER="plexmediaserver.bak"
 CERTFILE="/usr/local/share/certs/ca-root-nss.crt"
@@ -85,6 +85,7 @@ verNum()
 }
 
 
+
 ##  removeOlder()
 ##  READS:    $DOWNLOADPATH $PMSPATTERN $CURRENTVER $VERBOSE $LOGGING
 ##  MODIFIES: NONE
@@ -142,6 +143,7 @@ webGet()
 ##  MODIFIES: $DOWNLOADURL
 ##
 ##  connects to the Plex.tv download site and scrapes for the latest download link
+
 findLatest()
 {
     if [ $PLEXPASS = 1 ]; then local URL=$URLPLEXPASS; else local URL=$URLBASIC; fi
